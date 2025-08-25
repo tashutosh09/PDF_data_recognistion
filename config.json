@@ -5,7 +5,7 @@
       "model": "gpt-4o"
     },
     "gemini": {
-      "api_key": "AIzaSyA8ss5VY86BI8Hg2Mlk_5RsXl5tEG8frOE",
+      "api_key": "YOUR_GEMINI_API_KEY",
       "model": "gemini-2.0-flash"
     }
   },
