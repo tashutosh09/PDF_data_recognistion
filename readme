@@ -1,20 +1,8 @@
 Here is a generated README file for your project based on the available information:
 
----
-
 # PDF Data Recognition
 
-This project takes a PDF as input and generates a JSON output using AI.
-
-## Setup
-
-Here’s a suggested README for your project, including setup instructions:
-
----
-
-# PDF Data Recognition
-
-This project will take a PDF as input and generate JSON using AI.
+This project takes a PDF resume as input and generates helps you create interactive bot to understand the pdf better
 
 ## Setup Instructions
 

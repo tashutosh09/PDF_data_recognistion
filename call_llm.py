@@ -1,26 +1,14 @@
 import os
-from dotenv import load_dotenv
+
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_google_genai import ChatGoogleGenerativeAI
 from helper import get_config_value,get_first_available_llm_key
-
-
-# Load the config file
-
-# gemini_key = get_config_value('config.json', ['llm_providers', 'gemini', 'api_key'])
-
-# gemini_model = get_config_value('config.json', ['llm_providers', 'gemini', 'api_key'])
-
-
-# openai_key = get_config_value('config.json', ['llm_providers', 'openai', 'api_key'])
-
-# openai_model = get_config_value('config.json', ['llm_providers', 'openai', 'model'])
-                              
+                         
 
 get_llm_details = get_first_available_llm_key(get_config_value('config.json', []))
 
-print(get_llm_details)
+
 
 def generate_resume_answer(resume_markdown, topic) :
     """
