@@ -72,3 +72,20 @@ def get_config_value(config_path, key_path):
 # Example usage:
 # val = get_config_value('config.json', ['vector_store', 'qdrant', 'api_key'])
 # print(val)
+
+
+def get_first_available_llm_key(config):
+    """
+    Returns the first LLM provider config that has an available API key.
+    Args:
+        config (dict): The loaded config dictionary.
+    Returns:
+        dict: {'provider': str, 'api_key': str, 'model': str} or None if none found.
+    """
+    llm_providers = config.get("llm_providers", {})
+    for provider, details in llm_providers.items():
+        api_key = details.get("api_key")
+        model = details.get("model")
+        if api_key and api_key != "YOUR_" + provider.upper() + "_API_KEY":
+            return {"provider": provider, "api_key": api_key, "model": model}
+    return None

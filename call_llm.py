@@ -3,13 +3,26 @@ from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_google_genai import ChatGoogleGenerativeAI
-
-# Load the API key from .env
-load_dotenv()
-api_key = "AIzaSyA8ss5VY86BI8Hg2Mlk_5RsXl5tEG8frOE"  # os.getenv("GOOGLE_API_KEY")
+from helper import get_config_value,get_first_available_llm_key
 
 
-def generate_resume_answer(resume_markdown, topic, api_key=None):
+# Load the config file
+
+# gemini_key = get_config_value('config.json', ['llm_providers', 'gemini', 'api_key'])
+
+# gemini_model = get_config_value('config.json', ['llm_providers', 'gemini', 'api_key'])
+
+
+# openai_key = get_config_value('config.json', ['llm_providers', 'openai', 'api_key'])
+
+# openai_model = get_config_value('config.json', ['llm_providers', 'openai', 'model'])
+                              
+
+get_llm_details = get_first_available_llm_key(get_config_value('config.json', []))
+
+print(get_llm_details)
+
+def generate_resume_answer(resume_markdown, topic) :
     """
     Generate an answer to a user's question based solely on the provided resume markdown data.
     
@@ -26,8 +39,12 @@ def generate_resume_answer(resume_markdown, topic, api_key=None):
     from langchain_core.output_parsers import StrOutputParser
     
     # Use provided api_key or fall back to global one
-    if api_key is None:
-        api_key = globals().get('api_key')
+    if get_llm_details:
+        # print("Using provider:", result['provider'])
+        api_key = get_llm_details['api_key']
+        Model = get_llm_details['model']
+    else:
+        print("No configured LLM API key found.")
     
     if not api_key:
         raise ValueError("API key is required. Please provide it or set GOOGLE_API_KEY environment variable.")
@@ -35,7 +52,7 @@ def generate_resume_answer(resume_markdown, topic, api_key=None):
     # Initialize the Google Gemini LLM
     llm = ChatGoogleGenerativeAI(
         api_key=api_key,
-        model="gemini-2.0-flash",
+        model=Model,
         temperature=0.3  # Lower temperature for more factual, consistent responses
     )
     
