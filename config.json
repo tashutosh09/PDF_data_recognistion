@@ -1,0 +1,25 @@
+{
+  "llm_providers": {
+    "openai": {
+      "api_key": "YOUR_OPENAI_API_KEY",
+      "model": "gpt-4o"
+    },
+    "gemini": {
+      "api_key": "YOUR_GEMINI_API_KEY",
+      "model": "gemini-pro"
+    }
+  },
+  "vector_store": {
+    "pinecone": {
+      "api_key": "YOUR_PINECONE_API_KEY",
+      "environment": "asia-southeast1-gcp",
+      "index_name": "my-index"
+    },
+    "qdrant": {
+      "api_key": "YOUR_QDRANT_API_KEY",
+      "host": "YOUR_QDRANT_HOST_URL",
+      "port": 6333,
+      "collection_name": "my-qdrant-collection"
+    }
+  }
+}

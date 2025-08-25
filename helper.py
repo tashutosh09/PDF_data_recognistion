@@ -49,3 +49,26 @@ def read_file_robust(file_path, encodings=['utf-8', 'utf-16', 'latin-1', 'cp1252
 # if content is not None:
 #     print(f"File read successfully with encoding: {encoding_used}")
 #     print(content)
+
+
+import json
+
+def get_config_value(config_path, key_path):
+    """
+    Reads a value from a JSON config file by following the key path.
+    Args:
+        config_path (str): Path to the config JSON file.
+        key_path (list): List of keys describing the path to the desired config value.
+    Returns:
+        The value if found, else raises a KeyError.
+    """
+    with open(config_path, 'r') as f:
+        config = json.load(f)
+    value = config
+    for key in key_path:
+        value = value[key]
+    return value
+
+# Example usage:
+# val = get_config_value('config.json', ['vector_store', 'qdrant', 'api_key'])
+# print(val)
