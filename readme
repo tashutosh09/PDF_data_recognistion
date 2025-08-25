@@ -1,2 +1,64 @@
-this project will take pdf as input and generate json using AI
-change the config file details according to your uses 
+Here is a generated README file for your project based on the available information:
+
+---
+
+# PDF Data Recognition
+
+This project takes a PDF as input and generates a JSON output using AI.
+
+## Setup
+
+Here’s a suggested README for your project, including setup instructions:
+
+---
+
+# PDF Data Recognition
+
+This project will take a PDF as input and generate JSON using AI.
+
+## Setup Instructions
+
+1. **Install Python 3**  
+   Make sure Python 3 is installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
+
+2. **Clone the Repository**
+   ```sh
+   git clone https://github.com/tashutosh09/PDF_data_recognistion.git
+   cd PDF_data_recognistion
+   ```
+
+3. **Install Required Python Packages**  
+   Make sure to install all dependencies before running the project.  
+   If the project has a `requirements.txt` file, use:
+   ```sh
+   pip install -r requirements.txt
+   ```
+   If a requirements file is missing, install necessary packages as mentioned in the project documentation or scripts.
+
+4. **Configure the Project**  
+   Change the config file details according to your use case before running the code.
+
+---
+
+Feel free to expand this README with details about usage, examples, or more advanced configuration options as needed.
+
+- Change the details in the `config.json` file according to your use case.
+
+## File Structure
+
+- `main.py` - Main script to run the project. (not needed if running using streamlit_coe.py)
+- `pdf_parser.py` - Handles parsing of PDF files.
+- `call_llm.py` - Integrates with language models for data extraction.
+- `helper.py` - Utility/helper functions.
+- `streamlit_coe.py` - Streamlit interface code.
+- `config.json` - Configuration file.
+- `requirements.txt` - Python dependencies.
+
+## Usage
+
+1. Update the `config.json` file with your settings.
+2. Run the main script to process PDF files and generate JSON.
+
+---
+
+Feel free to expand this README with more detailed instructions or examples as needed.
