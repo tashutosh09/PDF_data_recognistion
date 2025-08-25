@@ -1,5 +1,56 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
+# Config files with secrets
 config.json
-raw_data/*
-staging_data/*
-main.py
+
+# Data directories
+raw_data/
+staging_data/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# VS Code settings
+.vscode/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
