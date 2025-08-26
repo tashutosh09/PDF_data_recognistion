@@ -19,6 +19,14 @@ def main():
 
     # Upload PDF section
     st.subheader("📤 Upload Resume PDF")
+    
+    # Add reset button if markdown is loaded
+    if st.session_state.markdown_loaded:
+        if st.button("🔄 Upload New Resume", type="secondary"):
+            st.session_state.markdown_loaded = False
+            st.session_state.markdown_data = ""
+            st.rerun()
+    
     uploaded_file = st.file_uploader("Select your resume PDF (only supports pdf file)", type=["pdf"])
 
     if uploaded_file and not st.session_state.markdown_loaded:
@@ -88,6 +96,7 @@ def main():
         st.markdown("""
         - Convert your resume first, then ask questions.
         - Use clear headings in your resume for best results.
+        - Click "Upload New Resume" to process a different file.
         """)
     
 if __name__ == "__main__":
