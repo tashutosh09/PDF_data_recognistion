@@ -57,8 +57,11 @@ Resume Data:
 User Question: {topic}
 
 Instructions:
-- Answer the question using ONLY information from the resume above
-- If the information is not available in the resume, respond with "I don't have that information in the provided resume"
+- Answer the question in two parts and generate 2 paragraph for each part.
+- First part will form first paragraph which will using ONLY information from the resume above.
+- If the information is not available in the resume, respond with "I don't have that information in the provided resume" in first part.
+- Second part will form second paragraph which will be a generic answer to the question.
+- In second part analyse the question and provided resume and provide a generic answer to the question.
 - Be specific and cite relevant sections from the resume when possible
 - Keep your answer concise and focused on the question asked
 
